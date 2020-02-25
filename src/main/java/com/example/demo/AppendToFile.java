@@ -12,7 +12,10 @@ public class AppendToFile {
 
 	public static  void appendToFile(String data, Locale locale) {
 		System.out.println(locale);
+		
 		String FILENAME = "src/main/resources/messages_"+locale.toString() +".properties";
+		if (locale.toString().equals("en")) {FILENAME = "src/main/resources/messages.properties";}
+		
 		//(value.equals(locale.toString()))
 		
 		/* if (locale.toString().equals("es")) {
