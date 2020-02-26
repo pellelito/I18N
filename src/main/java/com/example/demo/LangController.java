@@ -28,8 +28,7 @@ public class LangController {
 	// This adds new words and phrases for I18, also gets the locale to edit correct prop-file, default is en
 	@GetMapping(path = "/add")	
 	public void addI18n(
-			@RequestHeader(name = "Accept-Language", required = false) Locale locale, String var) {	
-		
+			@RequestHeader(name = "Accept-Language", required = false) Locale locale, String var) throws Exception {	
 		// set default to en if locale is missing 
 		if(locale == null) {locale = new Locale("en");}
 		AppendToFile.appendToFile(var + "\n", locale);	
